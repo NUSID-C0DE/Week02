@@ -5,15 +5,13 @@
   This example code is in the public domain.
  */
  
-// Pin 13 has an LED connected on most Arduino boards.
+// Pin 11 has an LED connected on most Arduino boards.
 // give it a name:
 int led = 11;
 
 // digital pin 2 has a pushbutton attached to it. Give it a name:
 int pushButton = 2;
 int buttonState = LOW;
-
-
 
 // the setup routine runs once when you press reset:
 void setup() {                
@@ -25,16 +23,9 @@ void setup() {
 // the loop routine runs over and over again forever:
 void loop() {
 
-  // read the input on analog pin 0:
-  int sensorValue = analogRead(A0);
-  // print out the value you read:
-  Serial.println(sensorValue);
-  int brightness;
+  // read the input on ditigal pin 2:
+  buttonState = digitalRead(pushButton);
+  digitalWrite(led, buttonState);
   
-  brightness = LEDmap(sensorValue,0,1023,0,255);
-   
-  analogWrite(led, buttonState);   // turn the LED on (HIGH is the voltage level)
-
   delay(100);               // wait for a while
-
 }

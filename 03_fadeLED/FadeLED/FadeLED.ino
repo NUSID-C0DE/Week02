@@ -24,6 +24,7 @@ void loop()  {
   
   // ramp up the LED brightness.
   for(i = 0; i <= 255; i = i + fadeAmount){
+    brightness = i;
     analogWrite(led, brightness);    
     delay(30);                            
   }
@@ -32,6 +33,7 @@ void loop()  {
   
   // ramp down the LED brightness.
   for(i = 255; i >= 0; i = i - fadeAmount){
+    brightness = i;
     analogWrite(led, brightness);    
     delay(30);                              
   }
